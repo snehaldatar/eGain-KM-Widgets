@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>eGain KM widgets</title>
+<link rel="stylesheet" href="all-widgets.css"></link>
+</head>
+<body>
+	<div class="">
+		<div class="search-widget-with-form-container">
+			<div class="form-container">
+				<div class="form-header"> 
+					<h1>Case Details</h1>
+				</div>
+				<form action="">
+				<div class="inline-input-group">
+					<div class="form-input">
+						<label for="case_number">Case Number:</label><br>
+						<input type="text" id="case_number" name="case_number" value="EG123000456">			
+					</div>
+					<div class="form-input">
+						<label for="case_owner">Case Owner:</label><br>
+						<input type="text" id="case_owner" name="case_owner" value="Anil Kumar">			
+					</div>
+				</div>
+				<div class="inline-input-group">
+					<div class="form-input">
+						<label for="case_status">Status:</label><br>
+						<select id="case_status" name="case_status">
+						  <option value="new" selected>New</option>
+						  <option value="assigned">Assigned</option>
+						  <option value="inprogress">In Progress</option>
+						  <option value="onhold">on Hold</option>
+						  <option value="closed">Closed</option>
+						</select>				
+					</div>
+					<div class="form-input">
+						<label for="case_priority">Priority:</label><br>
+						<select id="case_priority" name="case_priority">
+						  <option value="p1">P1</option>
+						  <option value="p2" selected>P2</option>
+						  <option value="p3">P3</option>
+						  <option value="p4">P4</option>				  
+						</select>			
+					</div>
+				</div>
+				<div class="form-input">
+						<label for="case_subject">Short Description:</label><br>
+						<input type="text" id="case_subject" name="case_subject" value="Payment Status">			
+				</div>
+				<div class="form-input">
+					<label for="case_desc">Description:</label><br>
+					<textarea id="case_desc" name="case_desc" rows="5" >Please let me know the status of my payment?</textarea>		
+				</div>
+				
+				</form>
+			</div>
+			<div class="widget-container">		
+				<div id="eg-search-widget"
+				 data-egain-role="search-widget"
+				 data-egain-portal-id="your_kb_portal_id"
+				 data-egain-host="//your_egain_system_url_with-context_root/"
+				 data-egain-template-name="silver"
+				 data-egain-locale="en-US">
+				</div>
+			</div>
+		</div>
+		<div class="list-section">
+			<div class="popular-articles-widget-container list-section-container">
+				<div id="eg-popular-article-widget"
+					 data-egain-role="popular-articles"
+					 data-egain-portal-id="your_kb_portal_id"
+					 data-egain-host="//your_egain_system_url_with-context_root/"
+					 data-egain-template-name="silver"
+					 data-egain-locale="en-US">
+				</div>
+			</div>
+			<div class="list-widget-container list-section-container">
+				<div id="eg-list-widget"
+					 data-egain-role="list-widget"
+					 data-egain-list-name="list-name-configured-in-portal"
+					 data-egain-portal-id="your_kb_portal_id"
+					 data-egain-host="//your_egain_system_url_with-context_root/"
+					 data-egain-template-name="silver"
+					 data-egain-locale="en-US">
+				</div>
+			</div>
+			<div class="search-field-widget-container list-section-container">
+				<div class="search-field-widget-container-heading">
+					<h1>Can't find what you are looking for?</h1>
+				</div>
+				<div id="eg-search-field-widget"
+					 data-egain-role="search-field-widget"
+					 data-egain-search-param="your_search_param"
+					 data-egain-portal-id="your_kb_portal_id"
+					 data-egain-host="//your_egain_system_url_with-context_root/"
+					 data-egain-template-name="silver"
+					 data-egain-locale="en-US">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+<script type="text/javascript" src="https://your_egain_system_url_with-context_root/widgets/libs/egain-ui-2.0.0.min.js"></script>
+<script>
+	var launchSearchWidget =  function(searchTerm){
+		var searchTerm = eGainUI("#case_subject").val();
+		if(searchTerm && searchTerm.trim() !== '')
+		eGainUI('#eg-search-widget').SearchWidget(searchTerm, function () {
+            //Code to be executed once the widget is successfully loaded
+			eGainUI('#eg-search-widget h1').html("Search Results for " + searchTerm);
+        });
+	};
+	 eGainUI(document).ready(function () {
+       launchSearchWidget();
+    });
+	eGainUI("#case_subject").change(function(){
+		launchSearchWidget();
+	});
+	
+	eGainUI('#eg-popular-article-widget').on("eGainUI.callback", function () {
+		eGainUI('#eg-popular-article-widget h1').html("Frequently Asked Queries");
+	});
+	
+	eGainUI('#eg-search-field-widget').on("eGainUI.callback", function () {
+		eGainUI('#eg-search-field-widget h1').html("Search Results for " + eGainUI('#eg-search-field-widget .eGain-Search-Field-Input-text').val());
+		eGainUI('#eg-search-field-widget .eGain-Search-Field-Input-text')[0].placeholder = "Search knowledge base";
+		eGainUI('#eg-search-field-widget .eGain-Search-Field-Input-button')[0].value = ">";
+		
+	});
+	
+</script>
+</body>
+</html>
