@@ -2,10 +2,10 @@
 
 Empower and enable your website visitors to access the wealth of knowledge from your knowledge base on any website they visit in your domain with knowledge widgets. Knowledge Widgets allow specific eGain knowledge functionality to be embedded in a web page. Regardless of the content of the web page or the reason the user is accessing the site, knowledge widgets are versatile tools that can be placed on the web page to provide immediate answers to a customer's question. There are a variety of widgets to choose from, including:
 
-  1. **Popular Articles Widget**: Renders a list of popular articles in an HTML page based upon initialization parameters in the HTML element. (Git Repository: https://github.com/g-aprajidiot/eGain-KM-Popular-Articles-Widget)
-  1. **Search Widget**: Renders a list of articles matching the search parameter. The search widget does not consume a WSS license until a search is performed. (Git Repository: https://github.com/g-aprajidiot/eGain-KM-Search-Widget)
-  1. **Search Field Widget**: Renders a text input, search button and a list of of articles matching the search parameter. (Git Repository: https://github.com/g-aprajidiot/eGain-KM-Search-Field-Widget)
-  1. **List Widget**: Renders a list corresponding the list name parameter matching the name of the list in the portal configuration. The list widget consumes a WSS license to display the list of articles, regardless of whether the user clicks through to an article. (Git Repository: https://github.com/g-aprajidiot/eGain-KM-List-Widget)
+  1. **Popular Articles Widget**: Renders a list of popular articles in an HTML page based upon initialization parameters in the HTML element. (Git Repository: https://github.com/snehaldatar/eGain-KM-Popular-Articles-Widget)
+  1. **Search Widget**: Renders a list of articles matching the search parameter. The search widget does not consume a WSS license until a search is performed. (Git Repository: https://github.com/snehaldatar/eGain-KM-Search-Widget)
+  1. **Search Field Widget**: Renders a text input, search button and a list of of articles matching the search parameter. (Git Repository: https://github.com/snehaldatar/eGain-KM-Search-Field-Widget)
+  1. **List Widget**: Renders a list corresponding the list name parameter matching the name of the list in the portal configuration. The list widget consumes a WSS license to display the list of articles, regardless of whether the user clicks through to an article. (Git Repository: https://github.com/snehaldatar/eGain-KM-List-Widget)
 
 These widgets can be configured in the customer's HTML page which can be rendered as desired (dynamically or page load). There is no restriction on combination of widgets i.e., the widgets can be combined with each other in any order in the page.
 
