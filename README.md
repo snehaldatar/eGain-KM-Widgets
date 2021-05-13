@@ -28,7 +28,7 @@ This sample application uses Search Widget, Search Field Widget, List Widget and
 
 ## Configuring The Sample Application
 
-1. Clone or download the Sample Application from git hub repository https://github.com/g-aprajidiot/eGain-KM-Widgets.
+1. Clone or download the Sample Application from git hub repository https://github.com/snehaldatar/eGain-KM-Widgets.
 1. Change below attributes as required in the index html file.
     1. your_egain_system_url_with-context_root
     1. your_kb_portal_id
